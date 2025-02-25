@@ -1,0 +1,40 @@
+<section class="results">
+    <h1 style="display: flex; justify-content: center; margin-top: 5px;">-Saved Garages-</h1><hr>
+    <section class="garages">
+    @for (garage of garages; track garages) 
+    {
+        <section class="listing">
+            <img
+              class="listing-photo"
+              src="../../assets/GarageImages/{{garage.Cars.length}}Car.jpg"
+              alt="Photo of a garage"
+              crossorigin
+            />
+            <div class="parent-element">
+              <h2 class="listing-heading">Belongs to: {{ garage.BelongsTo }}</h2>
+              <p>Amount of cars in the garage: {{ garage.Cars.length }}</p> 
+              <a [routerLink]="['/garages/details', garage.ID]">Learn More</a>
+            </div>
+            
+          </section>
+    }@empty {
+        <div class="loop cubes">
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+            <div class="item cubes"></div>
+        </div>
+        <p class="hidden-message">This is taking longer than expected...<br>(If this continues the list might be empty)</p>
+    }
+    </section>
+    
+    <a href="/garages/create"><button class="btn" style="display: flex; align-self: flex-end;">
+        Create
+      </button></a>
+
+    <a href=""><button class="btn-cancel" style="float: left; margin-left: 25px;">Back</button></a>
+    
+</section>
+    

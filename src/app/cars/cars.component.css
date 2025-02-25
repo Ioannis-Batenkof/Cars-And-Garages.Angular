@@ -1,0 +1,127 @@
+.listing {
+    background: var(--accent-color);
+    border-radius: 30px;
+    padding-bottom: 30px;
+    width: 32%;
+    margin-bottom: 10px;
+}
+
+.listing-heading {
+    color: var(--primary-color);
+    padding: 10px 20px 0 20px;
+}
+
+.listing-photo {
+    height: 200px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 30px 30px 0 0;
+}
+
+.listing-location {
+    content: url("/assets/location-pin.svg") / "";
+}
+
+
+section.listing a {
+    padding-left: 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+section.listing a::after {
+    content: "\203A";
+    margin-left: 5px;
+}
+
+.parent-element {
+    display: flex;
+    flex-direction: column;
+}
+
+p{
+    margin-left: 20px;
+    margin-bottom: 0;
+}
+
+a{
+    align-self: flex-end;
+    margin-right: 20px;
+}
+
+
+
+/* From Uiverse.io by ShrinilDhorda */ 
+.btn {
+    position:static;
+    float: right;
+    margin-bottom: 25px;
+    margin-right: 25px;
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(14, 14, 26);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+  }
+  
+  .btn:active {
+    scale: 0.92;
+  }
+  
+  .btn:hover {
+    background: var(--primary-color);
+    background: linear-gradient(270deg, var(--primary-color)0%, var(--secondary-color) 60%);
+    color: rgb(4, 4, 38);
+    box-shadow: 0px 0px 60px var(--primary-color);
+
+  }
+
+  .btn-cancel {
+    position:static;
+    float: left;
+    margin-top: 0;
+    margin-left: 25px;
+    margin-bottom: 25px;
+    font-size: 1.2rem;
+    padding: 1rem 2.5rem;
+    border: none;
+    outline: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: rgb(14, 14, 26);
+    color: rgb(129, 129, 150);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #6c706d;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.4));
+  }
+  
+  .btn-cancel:active {
+    scale: 0.92;
+  }
+  
+  .btn-cancel:hover {
+    background: #849088;
+    background: linear-gradient(270deg, rgb(87, 90, 87) 0%, rgb(48, 49, 48) 60%);
+    color: rgb(234, 234, 234);
+    box-shadow: 0px 0px 60px #a0a4a3;
+
+  }
+
+  .cars {
+    display: flex;
+    flex-wrap: wrap; /* Allows the cars to wrap onto the next row */
+    gap: 1rem; /* Adds space between the cars */
+    justify-content: space-around;
+  }
+
+  

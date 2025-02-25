@@ -1,0 +1,44 @@
+<section class="results">
+  <h1 style="display: flex; justify-content: center; margin-top: 5px">
+    -Saved Cars-
+  </h1>
+  <hr />
+  <section class="cars">
+    @for (car of cars; track cars) {
+
+    <section class="listing">
+      <img
+        class="listing-photo"
+        src="../../assets/CarImages/{{ car.Manufacturer }}Logo.jpg"
+        alt="Photo of the cars Manufacturer"
+        crossorigin
+      />
+      <div class="parent-element">
+        <h2 class="listing-heading">Model: {{ car.Model }}</h2>
+        <p>Year: {{ car.Year }}</p>
+        <a [routerLink]="['/cars/details', car.ID]">Learn More</a>
+      </div>
+    </section>
+    }@empty {
+    <div class="loop cubes">
+      <div class="item cubes"></div>
+      <div class="item cubes"></div>
+      <div class="item cubes"></div>
+      <div class="item cubes"></div>
+      <div class="item cubes"></div>
+      <div class="item cubes"></div>
+    </div>
+    <p class="hidden-message">
+      This is taking longer than expected...<br />(If this continues the list
+      might be empty - Consider creating one!)
+    </p>
+    }
+  </section>
+
+  <a href="/cars/create"
+    ><button class="btn" style="display: flex; align-self: flex-end">
+      Create
+    </button>
+  </a>
+  <a href=""><button class="btn-cancel">Back</button></a>
+</section>

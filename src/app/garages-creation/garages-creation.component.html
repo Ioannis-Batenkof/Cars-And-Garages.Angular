@@ -1,0 +1,13 @@
+<h1>Create your Garage!</h1>
+<hr /><br>
+<p>We simply need the name of the owner :)</p>
+<p style="color: rgb(109, 101, 101);">This Garage Belongs to: </p>
+<div class="input-container">
+    <input
+      type="text"
+      style="width: 10em"
+      [(ngModel)]="garage.BelongsTo"
+    />
+  </div>
+<a><button class="btn-save" (click)="Create()">Create</button></a>
+<a><button class="btn-cancel" (click)="Cancel()">Cancel</button></a>

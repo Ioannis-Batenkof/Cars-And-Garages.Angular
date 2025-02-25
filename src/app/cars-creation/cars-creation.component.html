@@ -1,0 +1,52 @@
+<h1>Create your Car!</h1>
+<hr />
+<div class="container">
+    <p>
+        Manufacturer:
+        <input
+          class="input"
+          placeholder=""
+          name="text"
+          [(ngModel)]="car.Manufacturer"
+          type="text"
+        />
+      </p>
+  <p>
+    Model:
+    <input
+      class="input"
+      placeholder=""
+      name="text"
+      [(ngModel)]="car.Model"
+      type="text"
+      style="margin-left: 85px;"
+    />
+  </p>
+  <p>
+    Year:
+    <input
+      class="input"
+      placeholder=""
+      name="text"
+      [(ngModel)]="car.Year"
+      type="text"
+      style="margin-left: 103px;"
+    />
+  </p>
+  <p>
+    Horsepower:
+    <input
+      class="input"
+      placeholder=""
+      name="text"
+      [(ngModel)]="car.Horsepower"
+      type="number"
+      style="margin-left: 12px;"
+    />
+  </p>
+  <p style="font-size: 12px">
+  <label> (Newly created cars are available to ALL Garages!) </label>
+</p>
+</div>
+<a><button class="btn-save" (click)="Create()">Create</button></a>
+<a><button class="btn-cancel" (click)="Cancel()">Cancel</button></a>

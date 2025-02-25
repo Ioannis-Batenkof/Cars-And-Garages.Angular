@@ -1,0 +1,41 @@
+<section class="results">
+    <h1 style="display: flex; justify-content: center; margin-top: 5px">
+      -Available Cars-
+    </h1>
+    <hr />
+    <section class="cars">
+      @for (car of cars; track cars) {
+  
+      <section class="listing">
+        <img
+          class="listing-photo"
+          src="../../assets/CarImages/{{ car.Manufacturer }}Logo.jpg"
+          alt="Photo of the cars Manufacturer"
+          crossorigin
+        />
+        <div class="parent-element">
+          <h2 class="listing-heading">Model: {{ car.Model }}</h2>
+          <p style="font-size: small">ID: {{ car.ID }}</p>
+          <a><button (click)="AddCarToGarage(car.ID)" style="background: none; border: none; color: var(--primary-color);"> Add to Garage</button></a>
+        </div>
+      </section>
+      }@empty {
+      <div class="loop cubes">
+        <div class="item cubes"></div>
+        <div class="item cubes"></div>
+        <div class="item cubes"></div>
+        <div class="item cubes"></div>
+        <div class="item cubes"></div>
+        <div class="item cubes"></div>
+      </div>
+      <p class="hidden-message">
+        This is taking longer than expected...<br />(If this continues the list
+        might be empty - Consider creating one!)
+      </p>
+      }
+      
+    </section>
+    <a href="/cars/create"><button class="btn" style="display: flex; align-self: flex-end; margin-top: 10px;" >Create</button> </a>
+    <a><button class="btn-cancel" style=" margin-top: 10px; float: left;" (click)="Cancel();"> Cancel </button></a>
+    
+  </section>

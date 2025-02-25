@@ -1,0 +1,87 @@
+<div class="container">
+  <section style="margin-top: 25px">
+    @if (editMode == false) {
+    <h1 style="text-align: center; margin-right: 20px">
+      {{ car.Manufacturer }}
+    </h1>
+    <hr style="width: 45rem" />
+    <h3>Car Information</h3>
+    <p style="margin-bottom: 25px">Model: {{ car.Model }}</p>
+    <p style="margin-bottom: 25px">Year: {{ car.Year }}</p>
+    <p style="margin-bottom: 25px">Horsepower: {{ car.Horsepower }}HP</p>
+    @if (car.Available == true) {
+    <p>Availability: [Available]</p>
+    } @else {
+    <p>Availability: [Unavailable]</p>
+    }
+    <a><button class="btn-delete" (click)="ConfirmDelete()">Delete</button></a>
+    <a
+      ><button class="btn-edit" (click)="editMode = ToggleEdit()">
+        Edit
+      </button></a
+    >
+    <a style="float:left"><button class="btn-cancel"  (click)="Back();">Back</button></a>
+
+    }@else {
+    <h1 style="text-align: center; margin-right: 20px;">
+      <div class="input-container">
+        <input
+          placeholder="{{ car.Manufacturer }}"
+          type="text"
+          style="width: 10em"
+          [(ngModel)]="newCar.Manufacturer"
+        />
+      </div>
+    </h1>
+    <hr style="width: 45rem" />
+
+    <h3>Car Information</h3>
+    <p>
+      Model:
+      <input
+        class="input"
+        placeholder="{{ car.Model }}"
+        name="text"
+        [(ngModel)]="newCar.Model"
+        type="text"
+      />
+    </p>
+    <p>
+      Year:
+      <input
+        class="input"
+        placeholder="{{ car.Year }}"
+        name="text"
+        [(ngModel)]="newCar.Year"
+        type="text"
+      />
+    </p>
+    <p>
+      Horsepower:
+      <input
+        class="input"
+        placeholder="{{ car.Horsepower }}"
+        name="text"
+        [(ngModel)]="newCar.Horsepower"
+        type="number"
+      />
+    </p>
+    <p style="font-size: 12px">
+      <label>
+        (Availability can be changed by assigning/unassigning the car to/from a
+        garage)
+      </label>
+    </p>
+    <a><button class="btn-save" (click)="SaveChanges()">Save</button></a>
+    <a
+      ><button class="btn-edit" (click)="editMode = ToggleEdit()">
+        Cancel
+      </button></a
+    >
+    }
+  </section>
+  <img
+    id="CarManufacturer"
+    src="../../assets/CarImages/{{ car.Manufacturer }}Logo.jpg"
+  />
+</div>

@@ -1,0 +1,27 @@
+<h1 style="margin-top: 50px; font-size: xx-large;">Welcome to {{title}}</h1><hr/><br><br>
+<h2>What is this place?...</h2><br>
+<p>This is Ioannis' first ever Angular Project. It is initially based on the Backend he created. Its theme.. well, you guessed it: Car and Garages.</p>
+<p>You create cars and assign them to your garage to claim ownership. If a mistake occurs, you can simply edit the details for both cars and garages.</p>
+<p>This program needs to be 100% reconfigured. So it is marked as Development Environment</p>
+<br><br>
+<h2>How it Works..</h2><br>
+<p>Here are the basic Should-Know stuff:</p>
+<ul>
+    <li>You can change EVERYTHING, except the ID (It is generated automatically)</li>
+    <li>The same car cannot be assigned to 2 or more garages. (That is physically not possible)</li>
+    <li>If a car is already assigned to another garage it will be inaccessible to all other garages 
+        <div class="loader-wrapper" style="float: right; margin-right: 100px">
+            <div class="packman"></div>
+            <div class="dots">
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+          <div class="dot"></div>
+        </div>
+      </div></li>
+</ul>
+<br>
+<h3>Wow... What's here?</h3>
+<br>
+<button class="btn-delete" (click)="ConfirmDeleteCars1()">Delete All Cars</button>
+<button class="btn-delete" (click)="ConfirmDeleteGarages1();">Delete All Garages</button>

@@ -1,0 +1,89 @@
+<h1 style="text-align: center; margin-top: 25px">
+  Welcome back {{ garage?.BelongsTo }}
+</h1>
+<hr />
+@if(editMode == false) { 
+  <div class="cars">
+  @for (car of garage?.Cars; track garage?.Cars) {
+  <section class="listing">
+  <img
+    class="listing-photo"
+    src="../../assets/CarImages/{{ car.Manufacturer }}Logo.jpg"
+    alt="Photo of the cars Manufacturer"
+    crossorigin
+  />
+  <div class="parent-element">
+    <h2 class="listing-heading">Model: {{ car.Model }}</h2>
+    <p>Year: {{ car.Year }}</p>
+    <a [routerLink]="['/cars/details', car.ID]">Learn More</a>
+  </div>
+  </section>
+  } @empty 
+{
+  <p style="margin-bottom: 162px">Your garage is completely empty...</p>
+}</div>
+<a><button class="btn-delete" (click)="ConfirmDelete()">Delete</button></a>
+<a><button class="btn-edit" (click)="editMode = ToggleEdit()">Edit</button></a>
+<a href="/garages"><button class="btn-cancel" style="float: left; margin-left: 25px;">Back</button></a>
+
+}@else {
+<p style="color: rgb(109, 101, 101)">This Garage Belongs to:</p>
+<div class="input-container">
+  <input
+    type="text"
+    style="width: 10em"
+    [(ngModel)]="newGarage.BelongsTo"
+    required
+    minlength="3"
+    name="BelongsTo"
+    #BelongsTo="ngModel"
+  />
+  <span *ngIf="BelongsTo.invalid && BelongsTo.touched" style="color: red">
+    The name of the owner is required and must be at least 3 characters long.
+  </span>
+</div>
+
+<a><button class="btn-save" (click)="SaveChanges()">Save</button></a>
+<a
+  ><button class="btn-cancel" (click)="editMode = ToggleEdit()">
+    Cancel
+  </button></a
+>
+@if (garage.Cars.length >= 4) 
+{
+  <a href="/garages/{{garage.ID}}/cars" 
+  ><button [disabled]="true" class="btn-edit" style="float: left;color: brown;">
+    Garage is full
+  </button></a
+>
+}@else {
+  <a href="/garages/{{garage.ID}}/cars" 
+  ><button class="btn-edit" style="float: left; ">
+    Add a Car
+  </button></a
+>
+}
+<br><br><br>
+@if(garage.Cars.length > 0) {
+<div style="display: flex; justify-content: center; flex-direction: column; flex-wrap: nowrap; align-items: center;">
+  <hr style="width: 100%; ">
+  <h2>Remove a car</h2><br>
+</div>
+<div class="cars">
+@for (car of garage?.Cars; track garage?.Cars) {
+  <section class="listing">
+  <img
+    class="listing-photo"
+    src="../../assets/CarImages/{{ car.Manufacturer }}Logo.jpg"
+    alt="Photo of the cars Manufacturer"
+    crossorigin
+  />
+  <div class="parent-element">
+    <h2 class="listing-heading">Model: {{ car.Model }}</h2>
+    <p>Year: {{ car.Year }}</p>
+    <a style="color:rgb(148, 38, 38);"><button style="background: none; border: none; color: rgb(148, 38, 38);" (click)="ConfirmCarRemoval(car.ID);">Remove</button></a>
+  </div>
+  </section>
+  }</div>
+}
+}
